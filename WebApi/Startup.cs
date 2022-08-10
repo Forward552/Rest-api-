@@ -1,3 +1,6 @@
+using Application.Interfaces;
+using Application.Mappings;
+using Application.Services;
 using Domain.Interfaces;
 using infrastracter.Repositories;
 using Microsoft.AspNetCore.Builder;
@@ -25,9 +28,10 @@ namespace WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IPostRepository, PostRepository>(); //
-            
-            
+            services.AddScoped<IPostRepository, PostRepository>(); //asp dot net core bedzie wiedzia³ ¿e ma automatycznie sobie przypisaæ IpostService do post service
+            services.AddScoped<IPostService, PostService>();
+            //be created only one by start
+            services.AddSingleton(AutoMapperConfig.Initialize());
             
             services.AddRazorPages();
         }
