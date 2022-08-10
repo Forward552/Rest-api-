@@ -8,7 +8,7 @@ using Domain.Interfaces;
 
 namespace infrastracter.Repositories
 {
-    public class PostRepository : IPostPepository
+    public class PostRepository : IPostRepository
     {
         private static readonly ISet<Post> _posts = new HashSet<Post>()
         {

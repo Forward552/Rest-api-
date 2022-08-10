@@ -7,7 +7,7 @@ using Domain.Entities;
 
 namespace Domain.Interfaces
 {
-    public interface IPostPepository
+    public interface IPostRepository
     {
         IEnumerable<Post> GetAll();
         Post GetById(int id);
