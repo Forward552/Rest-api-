@@ -14,7 +14,11 @@ namespace infrastracter.Repositories
         {
             new Post(1, "tytuł 1", "Treść 1"),
             new Post(2, "tytuł 2", "Treść 2"),
-            new Post(3, "tytuł 3", "Treść 3")
+            new Post(3, "tytuł 3", "Treść 3"),
+            new Post(4, "tytuł 4", "Treść 4"),
+            new Post(5, "tytuł 5", "Treść 5"),
+            new Post(6, "tytuł 6", "Treść 6"),
+            new Post(7, "tytuł 7", "Treść 7")
         };
 
         public IEnumerable<Post> GetAll()

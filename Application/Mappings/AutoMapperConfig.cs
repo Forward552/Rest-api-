@@ -18,6 +18,10 @@ namespace Application.Mappings
                 cfg.CreateMap<CreatePostDto, Post>();
                 cfg.CreateMap<UpdatePostDto, Post>();
 
+                cfg.CreateMap<Comments, CommentsDto>();
+                cfg.CreateMap<CreateCommentDto, Comments>();
+                cfg.CreateMap<UpdateComments, Comments>();
+
             }).CreateMapper();
     }
 }

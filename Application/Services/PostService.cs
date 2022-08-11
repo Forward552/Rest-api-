@@ -20,14 +20,11 @@ namespace Application.Services
              _postRepository = postPepository;
             _mapper = mapper;
         }
-
-
         public IEnumerable<PostDto> GetAllPosts()
         {
             var posts = _postRepository.GetAll();
             return _mapper.Map<IEnumerable<PostDto>>(posts);
         }
-
         public PostDto GetPostById(int id)
         {
             var post = _postRepository.GetById(id);
