@@ -20,7 +20,7 @@ namespace infrastracter.Repositories
             return _comments;
         }
 
-        public Comments GetByIDComment(int id)
+        public Comments GetById(int id)
         {
             return _comments.SingleOrDefault(p => p.Id == id);
         }

@@ -1,4 +1,5 @@
 ﻿using Application.Dto;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace Application.Interfaces
         CommentsDto GetCommentByIdComments(int id);
         CommentsDto GetCommentByIdPost(int id);
         CommentsDto NewComment(CreateCommentDto newComment);
-        void Update(UpdateComments updateComments);
+        void Update(UpdateCommentsDto updateComments);
         void DeleteComment(int id);
     }
 }

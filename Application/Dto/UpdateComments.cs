@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Application.Dto
 {
-    public class UpdateComments
+    public class UpdateCommentsDto
     {
         public string Comment { get; set; }
+        public int Id { get; internal set; }
     }
 }

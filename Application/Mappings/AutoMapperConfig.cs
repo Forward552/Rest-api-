@@ -20,7 +20,7 @@ namespace Application.Mappings
 
                 cfg.CreateMap<Comments, CommentsDto>();
                 cfg.CreateMap<CreateCommentDto, Comments>();
-                cfg.CreateMap<UpdateComments, Comments>();
+                cfg.CreateMap<UpdateCommentsDto, Comments>();
 
             }).CreateMapper();
     }

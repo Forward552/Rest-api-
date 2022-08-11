@@ -11,9 +11,10 @@ namespace Domain.Interfaces
     {
         IEnumerable<Comments> GetAll();
         Comments GetById(int id);
+        Comments GetByIdPost(int id);
         Comments Add(Comments comment);
         void Update(Comments comment);
-        void Delete(int id);
+        void Delete(Comments comment);
 
 
     }
