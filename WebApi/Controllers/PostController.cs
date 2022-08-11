@@ -46,7 +46,13 @@ namespace WebApi.Controllers
             _postService.UpdatePost(updatePost);
             return NoContent();
         }
-
+        [SwaggerOperation(Summary ="Kasowanie postu po id")]
+        [HttpDelete]
+        public IActionResult Delete (int id)
+        {
+            _postService.DeletePost(id);
+            return NoContent();
+        }
 
     }
 }
