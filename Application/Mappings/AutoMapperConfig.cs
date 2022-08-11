@@ -15,6 +15,8 @@ namespace Application.Mappings
             => new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<Post, PostDto>();
+                cfg.CreateMap<CreatePostDto, Post>();
+
             }).CreateMapper();
     }
 }

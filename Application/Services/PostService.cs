@@ -1,6 +1,7 @@
 ﻿using Application.Dto;
 using Application.Interfaces;
 using AutoMapper;
+using Domain.Entities;
 using Domain.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,8 @@ namespace Application.Services
              _postRepository = postPepository;
             _mapper = mapper;
         }
+
+
         public IEnumerable<PostDto> GetAllPosts()
         {
             var posts = _postRepository.GetAll();
@@ -29,6 +32,16 @@ namespace Application.Services
         {
             var post = _postRepository.GetById(id);
            return _mapper.Map<PostDto>(post);
+        }
+        public PostDto AddNewPost(CreatePostDto newpost)
+        {
+            if (string.IsNullOrEmpty(newpost.Title))
+            {
+                throw new Exception("Brak tytułu");
+            }    
+            var post = _mapper.Map<Post>(newpost);
+            _postRepository.Add(post);
+            return _mapper.Map<PostDto>(post);
         }
     }
 }
