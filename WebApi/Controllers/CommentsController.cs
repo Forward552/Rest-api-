@@ -37,10 +37,10 @@ namespace WebApi.Controllers
         }
 
         [SwaggerOperation(Summary = "Pobierz wszystkie komentarze do danego posta po jego id.")]
-        [HttpGet("{id}")]
-        public IActionResult GetByPost(int id)
+        [HttpGet("{idPost}")]
+        public IActionResult GetByPost(int idPost)
         {
-            var comment = _commentServise.GetCommentByIdPost(id);
+            var comment = _commentServise.GetCommentByIdPost(idPost);
             if (comment == null)
             {
                 return NotFound();
@@ -50,16 +50,18 @@ namespace WebApi.Controllers
 
         [SwaggerOperation(Summary = "Tworzenie nowego Komentarza")]
         [HttpPost]
-
         public IActionResult CreateComment(CreateCommentDto create)
         {
             var comment = _commentServise.NewComment(create);
+            if (comment.PostId == 0)
+            {
+                return NotFound();
+            }
             return Created($"api/comments/{comment.Id}", comment);
         }
 
         [SwaggerOperation(Summary = "Aktualizuje istniejący komentarz")]
         [HttpPut]
-
         public IActionResult Update(UpdateCommentsDto updateComments)
         {
             _commentServise.Update(updateComments);
@@ -68,7 +70,6 @@ namespace WebApi.Controllers
 
         [SwaggerOperation(Summary = "Kasowanie Komentarza po id")]
         [HttpDelete("id")]
-
         public IActionResult DeleteComment (int id)
         {
             _commentServise.DeleteComment(id);
