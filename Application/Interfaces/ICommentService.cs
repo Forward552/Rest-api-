@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Application.Interfaces
 {
-    internal interface ICommentService
+    public interface ICommentService
     {
         IEnumerable<CommentsDto> GetAllComments();
         CommentsDto GetCommentByIdComments(int id);

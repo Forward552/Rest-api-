@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace infrastracter.Repositories
 {
-    public class CommentRepository
+    public class CommentRepository : ICommentsRepository
     {
         private static readonly ISet<Comments> _comments = new HashSet<Comments>()
         {

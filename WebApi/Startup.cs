@@ -32,7 +32,10 @@ namespace WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IPostRepository, PostRepository>(); //IPostRepository przypisuje do PostRepository
+            services.AddScoped<ICommentsRepository, CommentRepository>();
+
             services.AddScoped<IPostService, PostService>();
+            services.AddScoped<ICommentService, CommentsService>();
 
             services.AddSingleton(AutoMapperConfig.Initialize());
 
